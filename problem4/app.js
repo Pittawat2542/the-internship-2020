@@ -41,18 +41,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
 var fetch_data_1 = __importDefault(require("./utils/fetch-data"));
-(function () { return __awaiter(void 0, void 0, void 0, function () {
-    var parsedListOfCompanies;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, fetch_data_1.default()];
-            case 1:
-                parsedListOfCompanies = _a.sent();
-                parsedListOfCompanies.map(function (company) { return console.log(company.logoURL); });
-                return [2 /*return*/];
-        }
-    });
-}); })();
 var app = express_1.default();
 app.get('/', function (_, res) { return res.send("It works!"); });
 app.get('/companies', function (_, res) { return __awaiter(void 0, void 0, void 0, function () {
@@ -69,4 +57,15 @@ app.get('/companies', function (_, res) { return __awaiter(void 0, void 0, void 
         }
     });
 }); });
-app.listen(3000);
+app.listen(3000, function () { return __awaiter(void 0, void 0, void 0, function () {
+    var parsedListOfCompanies;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, fetch_data_1.default()];
+            case 1:
+                parsedListOfCompanies = _a.sent();
+                parsedListOfCompanies.map(function (company) { return console.log(company.logoURL); });
+                return [2 /*return*/];
+        }
+    });
+}); });
