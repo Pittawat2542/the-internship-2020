@@ -53,11 +53,7 @@ var fetchData = function () { return __awaiter(void 0, void 0, void 0, function 
                 parsedListOfCompanies = [];
                 listOfCompanies.children.forEach(function (company) {
                     parsedListOfCompanies.push({
-                        logoURL: $(company)
-                            .children('div')
-                            .children('div')
-                            .children('a')
-                            .children('img')
+                        logoURL: $(company).find('a > img')
                             .attr('src'),
                         description: $(company)
                             .text()

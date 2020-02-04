@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Problem2 {
     final static int MAX_CONSIDER_DIGIT = 3;
-
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
