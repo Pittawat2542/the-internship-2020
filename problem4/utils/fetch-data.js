@@ -65,7 +65,7 @@ var fetchData = function () { return __awaiter(void 0, void 0, void 0, function 
                         length: $(company).text().length
                     });
                 });
-                parsedListOfCompanies.sort(function (a, b) { return b.length - a.length; });
+                parsedListOfCompanies.sort(function (a, b) { return a.length - b.length; });
                 return [2 /*return*/, parsedListOfCompanies];
         }
     });
