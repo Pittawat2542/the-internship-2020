@@ -26,7 +26,7 @@ const fetchData = async () => {
             length: $(company).text().length
         });
     });
-    parsedListOfCompanies.sort((a, b) => b.length - a.length);
+    parsedListOfCompanies.sort((a, b) => a.length - b.length);
     return parsedListOfCompanies;
 };
 
