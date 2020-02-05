@@ -25,10 +25,13 @@ public class Problem1 {
             String fullName = fullNameList[i];
             StringBuilder acronym = new StringBuilder();
             for (String partOfFullName : fullName.split(" ")) {
-                char firstCharacter = partOfFullName.charAt(0);
-                if (firstCharacter >= 65 && firstCharacter <= 90) {
-                    acronym.append(firstCharacter);
+                if (partOfFullName.length() > 0) {
+                    char firstCharacter = partOfFullName.charAt(0);
+                    if (firstCharacter >= 65 && firstCharacter <= 90) {
+                        acronym.append(firstCharacter);
+                    }
                 }
+
             }
             acronymList[i] = acronym.toString();
         }

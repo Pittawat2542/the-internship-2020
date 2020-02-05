@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Problem2 {
     final static int MAX_CONSIDER_DIGIT = 3;
-    
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -15,7 +15,26 @@ public class Problem2 {
         String currentNumber = scanner.nextLine();
         while (!currentNumber.equals("0.0")) {
             boolean isFloatingPrime = false;
+            if (!currentNumber.contains(".")) {
+                currentNumber += ".000";
+            }
+
             String beforeDecimal = currentNumber.split("[.]")[0];
+
+            if (Integer.parseInt(beforeDecimal) < 10) {
+                if (currentNumber.length() < 5) {
+                    for (int i = 0; i < 5 - currentNumber.length() + 1; i++) {
+                        currentNumber += "0";
+                    }
+                }
+            } else {
+                if (currentNumber.length() < 6) {
+                    for (int i = 0; i < 6 - currentNumber.length() + 1; i++) {
+                        currentNumber += "0";
+                    }
+                }
+            }
+
             String afterDecimal = currentNumber.split("[.]")[1];
 
             StringBuilder currentConsider = new StringBuilder(beforeDecimal);
